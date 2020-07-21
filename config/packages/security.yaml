@@ -23,6 +23,13 @@ security:
                 csrf_token_generator: security.csrf.token_manager
                 csrf_parameter: _csrf_security_token
                 csrf_token_id: a_private_string
+            guard:
+                authenticators:
+                    - App\Security\UserAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
 
 
             # activate different ways to authenticate
